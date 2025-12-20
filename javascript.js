@@ -11,28 +11,72 @@ function getComputerChoice() {
         console.log("getComputerChoice is broken");
     }
 };
-let computerChoice = getComputerChoice()
 
 
 function getHumanChoice() {
     return prompt("Pick rock, paper or scissors!")
 };
-let humanChoice = getHumanChoice()
-
-// Make var humanScore and computerScore (0 at first)
-// Write function called playRound with parameters humanChoice and computerChoice
-// Make humanChoice case-insensitive
-// playRound should log result stating winnner
-// ++ score of winner
 
 
+function playRound(humanChoice, computerChoice) {
+    let humanSelection = humanChoice.toUpperCase()
+    if (humanSelection === "ROCK") {
+        if (computerChoice === "scissors") {
+            console.log("You win! " + humanChoice + " beats " + computerChoice + ".")
+            return "win"
+        } else if (computerChoice === humanChoice) {
+            console.log("It's a tie!")
+            return "tie"
+        } else {
+            console.log("You lose! " + computerChoice + " beats " + humanChoice + "." )
+            return "lose"
+        }
+    }
+    if (humanSelection === "PAPER") {
+        if (computerChoice === "rock") {
+            console.log("You win! " + humanChoice + " beats " + computerChoice + ".")
+            return "win"
+        } else if (computerChoice === humanChoice) {
+            console.log("It's a tie!")
+            return "tie"
+        } else {
+            console.log("You lose! " + computerChoice + " beats " + humanChoice + "." )
+            return "lose"
+        }
+    }
+    if (humanSelection === "SCISSORS") {
+        if (computerChoice === "paper") {
+            console.log("You win! " + humanChoice + " beats " + computerChoice + ".")
+            return "win"
+        } else if (computerChoice === humanChoice) {
+            console.log("It's a tie!")
+            return "tie"
+        } else {
+            console.log("You lose! " + computerChoice + " beats " + humanChoice + "." )
+            return "lose"
+        }
+    }
+};
 
 
+let computerChoice = getComputerChoice();
+let humanChoice = getHumanChoice();
+let humanScore = 0;
+let computerScore = 0;
+let result = playRound(humanChoice, computerChoice);
 
+switch (result) {
+    case "win":
+        humanScore = ++humanScore
+        break;
+    case "tie":
+        break;
+    case "lose":
+        computerScore = ++computerScore
+        break;
+};
 
-
-
-
-
+console.log("Human: "+humanScore)
+console.log("Computer: "+computerScore)
 
 // Write playGame function that repeats this for 5 rounds (repeat 4 more times)
