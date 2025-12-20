@@ -1,26 +1,23 @@
-// Write function called getComputerChoice
-// RNG number from 1 to 3
-// 1 = rock ; 2 = paper ; 3 = scissors
+function getComputerChoice() {
+    let choiceNum = Math.floor((Math.random()*3) +1)
+    // 1 = rock ; 2 = paper ; 3 = scissors
+    if (choiceNum === 1) {
+        return "rock"
+    } else if (choiceNum === 2) {
+        return "paper"
+    } else if (choiceNum === 3) {
+        return "scissors"
+    } else {
+        console.log("getComputerChoice is broken");
+    }
+};
+let computerChoice = getComputerChoice()
 
 
-
-
-
-
-
-
-// Write function called getHumanChoice
-// Use prompt(question, default) to get choice
-
-
-
-
-
-
-
-
-
-
+function getHumanChoice() {
+    return prompt("Pick rock, paper or scissors!")
+};
+let humanChoice = getHumanChoice()
 
 // Make var humanScore and computerScore (0 at first)
 // Write function called playRound with parameters humanChoice and computerChoice
