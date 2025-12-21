@@ -13,47 +13,45 @@ function getComputerChoice() {
     }
 };
 
-
 function getHumanChoice() {
     return prompt("Pick rock, paper or scissors!")
 };
-
 
 function playRound(humanChoice, computerChoice) {
     let humanSelection = humanChoice.toUpperCase()
     if (humanSelection === "ROCK") {
         if (computerChoice === "scissors") {
-            console.log("You win! " + humanChoice + " beats " + computerChoice + ".")
+            console.log("You win this round! " + humanChoice + " beats " + computerChoice + ".")
             return "win"
         } else if (computerChoice === humanChoice) {
             console.log("It's a tie!")
             return "tie"
         } else {
-            console.log("You lose! " + computerChoice + " beats " + humanChoice + "." )
+            console.log("You lose this round! " + computerChoice + " beats " + humanChoice + "." )
             return "lose"
         }
     }
     if (humanSelection === "PAPER") {
         if (computerChoice === "rock") {
-            console.log("You win! " + humanChoice + " beats " + computerChoice + ".")
+            console.log("You win this round! " + humanChoice + " beats " + computerChoice + ".")
             return "win"
         } else if (computerChoice === humanChoice) {
             console.log("It's a tie!")
             return "tie"
         } else {
-            console.log("You lose! " + computerChoice + " beats " + humanChoice + "." )
+            console.log("You lose this round! " + computerChoice + " beats " + humanChoice + "." )
             return "lose"
         }
     }
     if (humanSelection === "SCISSORS") {
         if (computerChoice === "paper") {
-            console.log("You win! " + humanChoice + " beats " + computerChoice + ".")
+            console.log("You win this round! " + humanChoice + " beats " + computerChoice + ".")
             return "win"
         } else if (computerChoice === humanChoice) {
             console.log("It's a tie!")
             return "tie"
         } else {
-            console.log("You lose! " + computerChoice + " beats " + humanChoice + "." )
+            console.log("You lose this round! " + computerChoice + " beats " + humanChoice + "." )
             return "lose"
         }
     }
@@ -61,43 +59,71 @@ function playRound(humanChoice, computerChoice) {
 
 function calcHumanScore (result) {
     if (result === "win") {
-        return humanScore = ++humanScore
+        return 1
     } else {
-        return humanScore = humanScore
+        return 0
     }
 };
 
 function calcComputerScore (result) {
     if (result === "lose") {
-        return computerScore = ++computerScore
+        return 1
     } else {
-        return computerScore = computerScore
+        return 0
     }
 };
 
+function playGame(rounds) {
+    if (rounds <= 5) {
+        let computerChoice = getComputerChoice();
+        let humanChoice = getHumanChoice();
+        let roundResult = playRound(humanChoice, computerChoice);
+        humanScore = humanScore + calcHumanScore(roundResult)
+        computerScore = computerScore + calcComputerScore(roundResult)
+        console.log("Human: "+humanScore)
+        console.log("Computer: "+computerScore)        
+        console.log("Rounds left: "+(5-rounds))
+        return roundResult
+    } else {
+        if (humanScore > computerScore) {
+            console.log("You won the game! Refresh this page to play again...")
+            console.log("Human total: "+humanScore)
+            console.log("Computer total: "+computerScore)
+        } else if (humanScore < computerScore) {
+            console.log("You lost the game! Refresh this page to play again...")
+            console.log("Human total: "+humanScore)
+            console.log("Computer total: "+computerScore)
+        } else {
+            console.log("It's a tie! Refresh this page to play again...")
+            console.log("Human total: "+humanScore)
+            console.log("Computer total: "+computerScore)            
+        }
+    }
+}
+
+
+
 
 //GAME FLOW STARTS HERE
-let computerChoice = getComputerChoice();
-let humanChoice = getHumanChoice();
 let humanScore = 0;
 let computerScore = 0;
 let rounds = 1
-let result = playRound(humanChoice, computerChoice);
+let result;
 
-//Shows the result of the round
-console.log("Human: "+calcHumanScore(result))
-console.log("Computer: "+calcComputerScore(result))
+result = playGame(rounds)
 rounds = ++rounds
-console.log("Rounds: "+rounds)
 
-//Plays another round and shows results again
-computerChoice = getComputerChoice();
-humanChoice = getHumanChoice();
-result = playRound(humanChoice, computerChoice);
-
-console.log("Human: "+calcHumanScore(result))
-console.log("Computer: "+calcComputerScore(result))
+result = playGame(rounds)
 rounds = ++rounds
-console.log("Rounds: "+rounds)
 
-// Write playGame function that repeats this for 5 rounds (repeat 4 more times)
+result = playGame(rounds)
+rounds = ++rounds
+
+result = playGame(rounds)
+rounds = ++rounds
+
+result = playGame(rounds)
+rounds = ++rounds
+
+result = playGame(rounds)
+rounds = ++rounds
