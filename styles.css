@@ -4,7 +4,7 @@
     color: azure;
     margin: 0;
     padding: 0;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 body {
@@ -24,24 +24,39 @@ body {
 
 .title {
     font-size: 64px;
+    border: 2px solid azure;
+    padding: 0px 4px;
 }
 
 .instruction {
     font-size: 24px;
+    font-weight: normal;
 }
 
 .score-card {
     display: flex;
     justify-content: center;
-    gap: 128px;
+    flex-wrap: wrap;
 }
 
 .human-score, .computer-score {
     font-size: 32px;
+    border: 2px solid azure;
+    padding: 2px 4px;
+    margin: 12px 64px 0px 64px;
 }
 
 .result {
     font-size: 48px;
     text-align: center;
-    padding: 24px 0;
+    padding: 12px 0 32px 0;
 }
+
+.options-card {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 48px;
+}
+
+/* PICTURE SIZE SHOULD BE 300 BY 300PX */
