@@ -64,3 +64,8 @@ body {
     width: 300px;
     border-radius: 24px;
 }
+
+.disabled .option{
+    filter: brightness(50%);
+    border: 10px solid red;
+}

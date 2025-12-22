@@ -85,9 +85,11 @@ function determineWinner(humanScore, computerScore) {
         return;
     } else if (humanScore >= 5) {
         isThereAWinner = true;
+        removeButtons()
         return "human";
     } else {
         isThereAWinner = true;
+        removeButtons()
         return "computer"
     }
 };
@@ -100,6 +102,11 @@ function updateResult(result) {
     }
 };
 
+function removeButtons() {
+    rockButton.remove()
+    paperButton.remove()
+    scissorsButton.remove()
+}
 
 
 
