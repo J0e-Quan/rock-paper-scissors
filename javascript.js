@@ -112,18 +112,3 @@ let result;
 
 result = playGame(rounds)
 rounds = ++rounds
-
-result = playGame(rounds)
-rounds = ++rounds
-
-result = playGame(rounds)
-rounds = ++rounds
-
-result = playGame(rounds)
-rounds = ++rounds
-
-result = playGame(rounds)
-rounds = ++rounds
-
-result = playGame(rounds)
-rounds = ++rounds
