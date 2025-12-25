@@ -8,46 +8,34 @@ function getComputerChoice() {
         return "paper"
     } else if (choiceNum === 3) {
         return "scissors"
-    } else {
-        console.log("getComputerChoice is broken");
     }
 };
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === "rock") {
         if (computerChoice === "scissors") {
-
-            console.log("You win this round! " + humanChoice + " beats " + computerChoice + ".")
             return "win"
         } else if (computerChoice === humanChoice) {
-            console.log("It's a tie!")
             return "tie"
         } else {
-            console.log("You lose this round! " + computerChoice + " beats " + humanChoice + "." )
             return "lose"
         }
     }
     if (humanChoice === "paper") {
         if (computerChoice === "rock") {
-            console.log("You win this round! " + humanChoice + " beats " + computerChoice + ".")
             return "win"
         } else if (computerChoice === humanChoice) {
-            console.log("It's a tie!")
             return "tie"
         } else {
-            console.log("You lose this round! " + computerChoice + " beats " + humanChoice + "." )
             return "lose"
         }
     }
     if (humanChoice === "scissors") {
         if (computerChoice === "paper") {
-            console.log("You win this round! " + humanChoice + " beats " + computerChoice + ".")
             return "win"
         } else if (computerChoice === humanChoice) {
-            console.log("It's a tie!")
             return "tie"
         } else {
-            console.log("You lose this round! " + computerChoice + " beats " + humanChoice + "." )
             return "lose"
         }
     }
@@ -132,7 +120,6 @@ let resultText = document.querySelector(".result")
 rockButton.addEventListener('click', () => {
     if (isThereAWinner === false) {
         humanChoice = "rock";
-        console.log(humanChoice)
         computerChoice = getComputerChoice();
         result = playRound(humanChoice, computerChoice);
         calcHumanScore(result);
