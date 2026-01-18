@@ -23,3 +23,7 @@ Live demo link: https://j0e-quan.github.io/rock-paper-scissors/
 ![Picture showing updated score and result halfway through game](./readme-assets/rps-gameplay.jpeg)
 ![Picture showing final results after game has ended](./readme-assets/rps-result.jpeg)
 ![Picture showing mobile-friendly layout](./readme-assets/rps-mobile.jpeg)
+
+## Getting started:
+1. clone this repo in your desired folder: `git clone https://github.com/J0e-Quan/rock-paper-scissors.git`
+2. open index.html in your browser
